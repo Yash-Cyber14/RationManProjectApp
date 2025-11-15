@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "174779947285",
+    "project_id": "rationmanprojectfinal",
+    "storage_bucket": "rationmanprojectfinal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174779947285:android:0403847c9b5b70299b711c",
+        "android_client_info": {
+          "package_name": "com.example.rationmanproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDCRP1qV_FbPjUWZEVzTB8xfbY2aEPuxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
