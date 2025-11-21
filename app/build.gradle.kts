@@ -26,6 +26,11 @@ android {
         }
     }
 
+    // ✅ Add this to fix KAPT unit test errors
+    kapt {
+        correctErrorTypes = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -115,11 +120,7 @@ dependencies {
     // ✅ Logging interceptor (for seeing requests/responses in Logcat)
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14")
 
-
-
     // Correct configuration for Room
     implementation ("androidx.room:room-runtime:$room_version")
     kapt ("androidx.room:room-compiler:$room_version")
-
-
 }

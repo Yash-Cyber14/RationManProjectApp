@@ -104,13 +104,13 @@ fun SignUp(navController: NavController){
 
         Box(modifier = Modifier
             .fillMaxSize()
-            .padding(top = 80.dp)
+            .padding(top = 100.dp)
         ) {
             Column(modifier= Modifier
                 .fillMaxSize()
                 .padding(5.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(text = "Sign Up", style= TextStyle(
-                    fontSize = 20.sp,
+                    fontSize = 50.sp,
                     fontWeight = FontWeight.Bold
                 ))
 
