@@ -23,14 +23,14 @@ data class Stock(
     val wheat: Boolean
 )
 
-data class shopswithdistance (
-    val apiresponse: apiresponse,
-    val distance : Float
-)
-
 data class Report(
     val username : String = "",
     val message : String = "",
     val timestamp : com.google.firebase.Timestamp? = null
 
+)
+
+data class shopswithdistance (
+    val apiresponse: apiresponse,
+    val distance : Float
 )

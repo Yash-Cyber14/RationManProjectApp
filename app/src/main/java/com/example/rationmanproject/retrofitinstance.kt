@@ -62,6 +62,12 @@ object NetworkModule {
 
     @Provides
     @Singleton
+    fun provideAuthRepository(api: apiserviceinterface): AuthRepository {
+        return AuthRepository(api)
+    }
+
+    @Provides
+    @Singleton
     fun getfirebaseinstance(): FirebaseFirestore {
         return FirebaseFirestore.getInstance()
     }
