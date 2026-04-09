@@ -126,7 +126,9 @@ fun ProfileScreen(navController: NavController, viewModel: AuthViewModel) {
                 // 🚪 Sign Out Button
                 Button(
                     onClick = {
-                        viewModel.signOut()
+                        viewModel.signOut(
+                            context = context
+                        )
                         navController.navigate(Screen.Signup.route) {
                             popUpTo(0)
                         }
@@ -173,82 +175,37 @@ fun ProfileScreen(navController: NavController, viewModel: AuthViewModel) {
 @Composable
 fun GeneralInfo(viewModel: AuthViewModel) {
 
-    val instance = viewModel.auth
-    val currentuser = instance.currentUser
-    Column(Modifier.wrapContentHeight().fillMaxWidth(0.9f)) {
+    val email = viewModel.profileemail.value
+
+    Column(
+        Modifier
+            .wrapContentHeight()
+            .fillMaxWidth(0.9f)
+    ) {
+
         OutlinedTextField(
-            value = currentuser?.email ?: "",
+            value = email,
             onValueChange = {},
-            shape = RoundedCornerShape(10.dp),
             readOnly = true,
-            label = { Text("Email") },
-            leadingIcon = {
-                Icon(
-                    Icons.Default.Email,
-                    contentDescription = "Email",
-                    tint = Color.Black
-                )
-            },
-            colors = TextFieldDefaults.colors(
-                focusedTextColor = Color.Black,
-                unfocusedTextColor = Color.Black,
-                focusedContainerColor = Color.White,
-                unfocusedContainerColor = Color.White,
-                disabledContainerColor = Color.White,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            )
-        )
-        Spacer(Modifier.height(10.dp))
-        OutlinedTextField(
-            value = currentuser?.uid ?: "",
-            onValueChange = {},
-            shape = RoundedCornerShape(10.dp),
-            readOnly = true,
-            label = { Text("UserId") },
-            leadingIcon = {
-                Icon(
-                    Icons.Default.AddLink,
-                    contentDescription = "Email",
-                    tint = Color.Black
-                )
-            },
-            colors = TextFieldDefaults.colors(
-                focusedTextColor = Color.Black,
-                unfocusedTextColor = Color.Black,
-                focusedContainerColor = Color.White,
-                unfocusedContainerColor = Color.White,
-                disabledContainerColor = Color.White,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            )
-        )
-        Spacer(Modifier.height(10.dp))
-        OutlinedTextField(
-            value = currentuser?.displayName ?: "",
-            onValueChange = {},
-            shape = RoundedCornerShape(10.dp),
-            readOnly = true,
-            label = { Text("Display Name") },
-            leadingIcon = {
-                Icon(
-                    Icons.Default.Adjust,
-                    contentDescription = "Name",
-                    tint = Color.Black
-                )
-            },
-            colors = TextFieldDefaults.colors(
-                focusedTextColor = Color.Black,
-                unfocusedTextColor = Color.Black,
-                focusedContainerColor = Color.White,
-                unfocusedContainerColor = Color.White,
-                disabledContainerColor = Color.White,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            )
+            label = { Text("Email") }
         )
 
+        Spacer(Modifier.height(10.dp))
 
+        OutlinedTextField(
+            value = "N/A",
+            onValueChange = {},
+            readOnly = true,
+            label = { Text("UserId") }
+        )
+
+        Spacer(Modifier.height(10.dp))
+
+        OutlinedTextField(
+            value = "N/A",
+            onValueChange = {},
+            readOnly = true,
+            label = { Text("Display Name") }
+        )
     }
-
 }

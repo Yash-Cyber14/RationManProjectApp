@@ -13,7 +13,6 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -56,7 +55,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun repository(api: apiserviceinterface , reportService: Reportfirebaseservice): Repository {
-        return Repository(api , reportService)
+        return Repository(api)
 
     }
 

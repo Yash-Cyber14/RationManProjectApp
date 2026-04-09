@@ -162,7 +162,7 @@ fun SignIn(navcontroller: NavHostController ) {
 //            }
 
                 Button(onClick = {
-                    viewModel.signin(email.value , password.value)
+                    viewModel.signin(email.value , password.value , context)
 
                     if(viewModel.signupstate.value.confirm == true)
                     {

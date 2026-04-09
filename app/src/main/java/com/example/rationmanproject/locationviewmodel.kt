@@ -186,9 +186,8 @@ class locationviewmodel @Inject constructor(private val repository: Repository, 
     fun getReports(shopid: String) {
         viewModelScope.launch {
             try {
-                repository.getreports(shopid).collect { reportsList ->
-                    _reports.value = reportsList
-                }
+                val reportsList = repository.getreports(shopid)
+                _reports.value = reportsList
             } catch (e: Exception) {
                 _uiEvents.emit("Failed to load reports: ${e.message}")
             }
