@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
 //    id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.dagger.hilt.android")
-//    id("com.google.gms.google-services")
+    
     kotlin("kapt")
 }
 
@@ -93,11 +93,11 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.51.1")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
-    // ☁️ --- Firebase ---
-//    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
-//    implementation("com.google.firebase:firebase-auth")
-//    implementation("com.google.firebase:firebase-firestore")
-//    implementation("com.google.firebase:firebase-storage")
+//     ☁️ --- Firebase ---
+    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-storage")
 
     // ⚙️ --- Coroutines ---
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")

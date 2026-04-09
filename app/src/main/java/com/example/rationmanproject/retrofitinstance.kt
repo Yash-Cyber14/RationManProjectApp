@@ -2,8 +2,8 @@ package com.example.rationmanproject
 
 import android.content.Context
 
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+//import com.google.firebase.auth.FirebaseAuth
+//import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -46,15 +46,15 @@ object NetworkModule {
 
     }
 
-    @Provides
-    @Singleton
-    fun provideReportFirebaseService(firestore: FirebaseFirestore): Reportfirebaseservice {
-        return Reportfirebaseservice(firestore)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideReportFirebaseService(firestore: FirebaseFirestore): Reportfirebaseservice {
+//        return Reportfirebaseservice(firestore)
+//    }
 
     @Provides
     @Singleton
-    fun repository(api: apiserviceinterface , reportService: Reportfirebaseservice): Repository {
+    fun repository(api: apiserviceinterface ): Repository {
         return Repository(api)
 
     }
@@ -65,17 +65,17 @@ object NetworkModule {
         return AuthRepository(api)
     }
 
-    @Provides
-    @Singleton
-    fun getfirebaseinstance(): FirebaseFirestore {
-        return FirebaseFirestore.getInstance()
-    }
-
-    @Provides
-    @Singleton
-    fun provideFirebaseAuth(): FirebaseAuth =
-        FirebaseAuth.getInstance()
-
+//    @Provides
+//    @Singleton
+//    fun getfirebaseinstance(): FirebaseFirestore {
+//        return FirebaseFirestore.getInstance()
+//    }
+//
+//    @Provides
+//    @Singleton
+//    fun provideFirebaseAuth(): FirebaseAuth =
+//        FirebaseAuth.getInstance()
+//
 
 //    @Provides
 //    @Singleton
